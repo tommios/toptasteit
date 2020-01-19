@@ -1,0 +1,22 @@
+<div>
+    <h1 class="center-align">{{ product.title }}</h1>
+</div>
+
+<div class="product">
+
+    <div class="product-img">
+        <img src="{{product.img}}" alt="{{ product.title }}">
+    </div>
+
+    <div class="content  center-align">
+        <p class="deep-purple-text text-darken-4">Описание:</p>
+        <p class="txt">{{ product.description }}</p>
+        <p class="deep-purple-text text-darken-4">Ингредиенты:</p>
+        <p class="txt">{{ product.ingredients}}</p>
+        <p class="deep-purple-text text-darken-4">Калорийность в 100гр продукта:</p>
+        <p class="txt">{{ product.calorie}} ккал</p>
+        <p class="deep-purple-text text-darken-4">Цена за кг(ориентировочно):</p>
+        <p class="price big">{{ product.price }}</p>
+    </div>
+
+</div>

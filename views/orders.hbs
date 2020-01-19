@@ -1,0 +1,58 @@
+<h1 class="center-align">Мои Заказы</h1>
+
+{{#if orders.length}}
+
+    <div class="row">
+        {{#each orders}}
+            <div class="col s12 m6 l6 xl4">
+                <div class="card large teal lighten-5">
+
+                    <div class="card-content">
+
+                        <span class="card-title teal-text activator center-align">
+                            <i class="material-icons right">more_vert</i>
+                            Заказ №: <br>{{_id}}
+                        </span>
+
+                        <p class="left-align">Дата заказа: </p>
+                        <p class="date center-align"><small>{{date}}</small></p>
+
+                        <hr>
+                        <p>Имя: <i>{{user.name}}</i></p>
+                        <p>Телефон: <i>{{user.phone}}</i></p>
+                        <p>E-mail: <i>{{user.email}}</i></p>
+
+                        <ul class="collection">
+                            <li class="collection-item avatar">
+                                <img src="{{product.img}}" alt="" class="circle">
+                                <span class="title">{{product.title}}</span>
+                                <p>Арт.№{{product.vendorCode}}<br>
+                                    Цена за кг: <span class="price">{{product.price}}</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-reveal">
+                        <span class="card-title gray-text text-darken-4 center-align"><i
+                                class="material-icons right">close</i>Заказ
+                            №: <br><b>{{_id}}</b></span>
+                        <p class="center-align blue-text text-darken-4">О заказе</p>
+                        <p class="blue-text text-darken-4">Тема: </p>
+                        <p><i>{{user.theme}}</i></p>
+                        <p class="blue-text text-darken-4">Подробности: </p>
+                        <p><i>{{user.information}}</i></p>
+                    </div>
+
+                    <div class="card-action">
+                        <p class="left-align">На когда: <br> <span class="date">{{user.date}}</span> </p>
+                    </div>
+
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+{{else}}
+    <p>Заказов пока нет</p>
+{{/if}}

@@ -1,0 +1,72 @@
+<h1 class="center-align">Мой профиль</h1>
+
+<div class="row">
+
+    <div class="col s12 m6">
+        {{#if user.avatarUrl}}
+            <img class="avatar circle" src="{{user.avatarUrl}}" alt="avatar-{{user.name}}">
+        {{else}}
+            <img class="avatar circle" src="../icons/ava.png" alt="">
+            <p>Аватара нет</p>
+        {{/if}}
+    </div>
+
+    <div class="col s12 m6">
+        <p class="center-align topic">Настройки профиля:</p>
+        <p class="center-align">Здесь можно изменить имя и загрузить новое фото аватарки.</p>
+        <form action="/profile" method="POST" enctype="multipart/form-data">
+            <p>Ваш email: <strong><big>{{user.email}}</big></strong></p>
+
+            <div class="input-field">
+                <input id="name" name="name" type="text" class="validate" required value="{{user.name}}">
+                <label for="name">Имя</label>
+                <span class="helper-text" data-error="Введите имя"></span>
+            </div>
+
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Avatar</span>
+                    <input type="file" name="avatar" value="{{user.avatarUrl}}">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+
+            <p class="center-align"><button type="submit" class="btn  blue">Изменить</button></p>
+        </form>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col s12">
+        <p class="center-align topic">Добавление и удаление товаров из каталога:</p>
+        <p>После добавления товара в <a href="/products">Каталог</a>, Вы можете редактировать только <b>
+                Вами добавленные товары</b> при
+            помощи кнопки редактирования <a href="#" class="btn-floating btn-small waves-effect waves-light red"><i
+                    class="material-icons">edit</i></a> на
+            карточке товара в <a href="/products">Каталоге</a>. </p>
+        <p>В меню редактирования можно изменить название, краткое описание товара, используемые ингредиенты, количество
+            калорий в 100гр продукта а так же изменить фото Вашего торта.</p>
+        <p>Так же в меню редактирования можно удалить выбранный товар из каталога нажав на кнопку <button
+                class="btn red">Удалить</button></p>
+
+        {{#if isAuth}}
+            <p>Для того что бы добавить товар в каталог нажмите на кнопку ниже: </p>
+            <p class="center-align"><a href="/add" class="btn">Добавить новый товар в каталог</a></p>
+            <p>Для того что бы добавить описание начинки для торта на кнопку ниже: </p>
+            <p class="center-align"><a href="/addCakeToppings" class="btn">Добавить новое описание начинки</a></p>
+
+        {{else}}
+
+            {{#if isLogin}}
+                <li class="active"><a href="/auth/login#login">Войти</a></li>
+            {{else}}
+                <li><a href="/auth/login#login">Войти</a></li>
+            {{/if}}
+
+        {{/if}}
+    </div>
+</div>

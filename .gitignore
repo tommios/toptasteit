@@ -1,0 +1,22 @@
+
+# Created by https://www.gitignore.io/api/node,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=node,visualstudiocode
+
+# Dependency directories
+node_modules/
+
+# Secret code
+keys/keys.dev.js
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/node,visualstudiocode

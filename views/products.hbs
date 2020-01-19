@@ -1,0 +1,65 @@
+<h1 class="product">Каталог</h1>
+
+{{#if products.length}}
+
+    <div class="row">
+
+        {{#each products}}
+
+            <div class="col s12 m6 l4 xl3">
+
+                <div class="card large hoverable yellow lighten-5">
+
+                    <div class="card-image">
+                        <img src="{{ img }}" alt="{{ title }}" width="auto" height="240">
+                    </div>
+
+                    <div class="card-content flow-text center-align">
+                        <span class="card-title">Арт.№ {{ vendorCode }}</span>
+                        <span class="card-title">{{ title }}</span>
+                    </div>
+
+                    <div class="card-action">
+                        <div class="row">
+
+                            <div class="left">
+                                <a href="/products/{{id}}" target="_blank"
+                                    class="btn-floating btn-small tooltipped waves-effect waves-light light-blue lighten-1"
+                                    data-position="top" data-tooltip="Смотреть подробное описание"><i
+                                        class="material-icons">info_outline</i></a>
+                            </div>
+
+                            <div class="right">
+                                {{#if @root.isAuth}}
+
+                                    {{#ifeq userId._id @root.userId}}
+
+                                        <a href="/products/{{id}}/edit?allow=true"
+                                            class="btn-floating btn-small waves-effect waves-light red"><i
+                                                class="material-icons">edit</i></a>
+                                    {{/ifeq}}
+                                {{/if}}
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="center">
+                            <form action="/formOrder" method="post">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="_csrf" value="{{@root.csrf}}">
+                                <button type="submit"
+                                    class="btn btn-primary btn-medium green accent-4">Заказать</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        {{/each}}
+
+    </div>
+
+{{else}}
+    <p>Товаров пока нет</p>
+{{/if}}

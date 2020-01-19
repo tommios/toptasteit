@@ -1,0 +1,197 @@
+body {
+  background-color: #fdecd3;
+  font-family: cursive, fantasy;
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.content {
+  padding: 10px;
+}
+
+.txt,
+.topic {
+  font-size: 1.3rem;
+}
+
+.carousel {
+  height: 420px;
+  margin-bottom: 100px;
+}
+
+.carousel .carousel-item > img {
+  width: 230%;
+  /* margin-bottom: 50%; */
+  margin-left: -75%;
+}
+
+nav {
+  box-shadow: none;
+}
+
+nav,
+.nav-content,
+.page-footer {
+  background-color: #d88406;
+}
+
+.nav-wrapper {
+  padding: 0 2rem;
+}
+
+.card .card-title {
+  font-size: calc(1em + 0.1vw);
+}
+
+.card .flow-text {
+  font-size: calc(1rem + 0.1vw);
+}
+
+.price {
+  font-size: calc(1em + 0.4vw);
+}
+
+.btn {
+  font-size: 0.8em;
+  min-width: 8em;
+  border-radius: 35px;
+}
+
+span.brand-logo {
+  font-family: cursive, fantasy;
+}
+
+a.brand-logo img {
+  max-height: 55px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  margin: 5px auto 5px auto;
+}
+
+.product {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product .product-img {
+  margin: 15px;
+  object-fit: scale-down;
+}
+
+.product-img img {
+  width: calc(100% / 1.01);
+}
+
+.product .content {
+  padding: 15px;
+  flex: 1 1;
+}
+
+.product .price.big {
+  font-size: 2.5rem;
+}
+
+.card-action .center {
+  display: block;
+}
+
+.card-action.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth {
+  padding-top: 1rem;
+}
+
+.alert {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: rgba(252, 68, 68, 0.89);
+  color: rgb(28, 105, 41);
+}
+
+.avatar {
+  max-width: 300px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 1.4em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.content-main {
+  font-size: 1.4em;
+}
+
+/* ----------------------- */
+/* Style for foods-calorie */
+/* ----------------------- */
+.table_sort table {
+  border-collapse: collapse;
+}
+
+.table_sort th {
+  color: #ffebcd;
+  background: #d88211;
+  cursor: pointer;
+
+  font-size: 1.3vw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.table_sort td,
+.table_sort th {
+  width: 100%;
+  /* height: 15px; */
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #846868;
+}
+
+.table_sort tbody tr:nth-child(even) {
+  background: #f7d3a8;
+}
+
+th.sorted[data-order="1"],
+th.sorted[data-order="-1"] {
+  position: relative;
+}
+
+th.sorted[data-order="1"]::after,
+th.sorted[data-order="-1"]::after {
+  right: 8px;
+  position: absolute;
+}
+
+th.sorted[data-order="-1"]::after {
+  content: "▼";
+}
+
+th.sorted[data-order="1"]::after {
+  content: "▲";
+}
+/* --------------------------- */
+/* End Style for foods-calorie */
+/* --------------------------- */
+
+ul.collection .collection-item {
+  background-color: #fce0b7;
+  font-size: large;
+}

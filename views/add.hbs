@@ -1,0 +1,54 @@
+<h1 class="center-align">Добавить товар</h1>
+
+{{#if error}}
+    <p class="alert">{{error}}</p>
+{{/if}}
+<div class="row">
+    <div class="col s8 offset-s2">
+        <form action="/add" method="POST" enctype="multipart/form-data" id="add">
+            <div class="input-field">
+                <input id="title" name="title" type="text" class="validate" required value="{{data.title}}">
+                <label for="title">Название</label>
+                <span class="helper-text" data-error="Введите название"></span>
+            </div>
+
+            <div class="input-field">
+                <textarea id="description" class="materialize-textarea" name="description"
+                    placeholder="Введите краткое описание"></textarea>
+                <label for="description">Краткое описание</label>
+            </div>
+
+            <div class="input-field">
+                <input id="ingredients" name="ingredients" type="text">
+                <label for="ingredients">Ингредиенты</label>
+                <span class="helper-text" data-error="Введите основные ингредиенты через пробел"></span>
+            </div>
+
+            <div class="input-field">
+                <input id="calorie" name="calorie" type="number">
+                <label for="calorie">Калории</label>
+                <span class="helper-text" data-error="Введите калорийность в 100гр продукта"></span>
+            </div>
+
+            <div class="input-field">
+                <input id="price" name="price" type="number" class="validate" required min="1" value="{{data.price}}">
+                <label for="price">Цена за килограмм (ориентировочно)</label>
+                <span class="helper-text" data-error="Введите цену"></span>
+            </div>
+
+            <div class="input-field file-field">
+                <div class="btn">
+                    <span>Загрузить фото</span>
+                    <input type="file" name="img">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+
+            <button class="btn btn-primary waves-effect waves-orange">Добавить</button>
+        </form>
+    </div>
+</div>

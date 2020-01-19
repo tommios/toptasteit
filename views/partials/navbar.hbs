@@ -1,0 +1,150 @@
+<nav>
+    <div class="nav-wrapper topnav">
+        <a href="/" class="brand-logo">
+            <img src="/icons/logo.png" width="50" height="50">
+            <span class="brand-logo orange-text text-lighten-4 hide-on-med-and-down">TasteIt</span>
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <ul id="nav-mobile" class="right">
+            <li><a class="hide-on-small-only lime-text text-accent-2 email"
+                    href="mailto:toptasteit@gmail.com">toptasteit@gmail.com</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+<nav>
+    <div class="nav-wrapper">
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            {{#if isHome}}
+                <li class="active"><a href="/">Главная</a></li>
+            {{else}}
+                <li><a href="/">Главная</a></li>
+            {{/if}}
+
+            {{#if isProducts}}
+                <li class="active"><a href="/products">Каталог</a></li>
+            {{else}}
+                <li><a href="/products">Каталог</a></li>
+            {{/if}}
+
+            {{#if isCakeToppings}}
+                <li class="active"><a href="/cakeToppings">Начинки для тортов</a></li>
+            {{else}}
+                <li><a href="/cakeToppings">Начинки для тортов</a></li>
+            {{/if}}
+
+            {{#if isFoods}}
+                <li class="active"><a href="/foods-calorie">Калорийность</a></li>
+            {{else}}
+                <li><a href="/foods-calorie">Калорийность</a></li>
+            {{/if}}
+
+            {{#if isPay}}
+                <li class="active"><a href="/paymentAndDelivery">Оплата и доставка</a></li>
+            {{else}}
+                <li><a href="/paymentAndDelivery">Оплата и доставка</a></li>
+            {{/if}}
+
+            {{#if isFormOrder}}
+                <li class="active"><a href="/formOrder">ЗАКАЗАТЬ</a></li>
+            {{else}}
+                <li><a href="/formOrder">ЗАКАЗАТЬ</a></li>
+            {{/if}}
+
+            {{#if isAuth}}
+
+                {{#if isOrders}}
+                    <li class="active"><a href="/orders">Мои Заказы</a></li>
+                {{else}}
+                    <li><a href="/orders">Мои Заказы</a></li>
+                {{/if}}
+
+                {{#if isProfile}}
+                    <li class="active"><a href="/profile">Профиль</a></li>
+                {{else}}
+                    <li><a href="/profile">Профиль</a></li>
+                {{/if}}
+
+                <li><a href="/auth/logout">Выйти</a></li>
+
+            {{else}}
+
+                {{#if isLogin}}
+                    <li class="active"><a href="/auth/login#login">Войти</a></li>
+                {{else}}
+                    <li><a href="/auth/login#login">Войти</a></li>
+                {{/if}}
+
+            {{/if}}
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    {{#if isHome}}
+        <li class="active"><a href="/">Главная</a></li>
+    {{else}}
+        <li><a href="/">Главная</a></li>
+    {{/if}}
+
+    {{#if isProducts}}
+        <li class="active"><a href="/products">Каталог</a></li>
+    {{else}}
+        <li><a href="/products">Каталог</a></li>
+    {{/if}}
+
+    {{#if isCakeToppings}}
+        <li class="active"><a href="/cakeToppings">Начинки для тортов</a></li>
+    {{else}}
+        <li><a href="/cakeToppings">Начинки для тортов</a></li>
+    {{/if}}
+
+    {{#if isFoods}}
+        <li class="active"><a href="/foods-calorie">Калорийность</a></li>
+    {{else}}
+        <li><a href="/foods-calorie">Калорийность</a></li>
+    {{/if}}
+
+    {{#if isPay}}
+        <li class="active"><a href="/paymentAndDelivery">Оплата и доставка</a></li>
+    {{else}}
+        <li><a href="/paymentAndDelivery">Оплата и доставка</a></li>
+    {{/if}}
+
+    {{#if isFormOrder}}
+        <li class="active"><a href="/formOrder">ЗАКАЗАТЬ</a></li>
+    {{else}}
+        <li><a href="/formOrder">ЗАКАЗАТЬ</a></li>
+    {{/if}}
+
+    {{#if isAuth}}
+
+        {{#if isOrders}}
+            <li class="active"><a href="/orders">Мои Заказы</a></li>
+        {{else}}
+            <li><a href="/orders">Мои Заказы</a></li>
+        {{/if}}
+
+        {{#if isProfile}}
+            <li class="active"><a href="/profile">Профиль</a></li>
+        {{else}}
+            <li><a href="/profile">Профиль</a></li>
+        {{/if}}
+
+        <li><a href="/auth/logout">Выйти</a></li>
+
+    {{else}}
+
+        {{#if isLogin}}
+            <li class="active"><a href="/auth/login#login">Войти</a></li>
+        {{else}}
+            <li><a href="/auth/login#login">Войти</a></li>
+        {{/if}}
+
+    {{/if}}
+</ul>

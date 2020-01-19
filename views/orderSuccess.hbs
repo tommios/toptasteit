@@ -1,0 +1,21 @@
+<h1>Спасибо за Ваш заказ!</h1>
+<p>Ожидайте SMS или звонок от оператора по статусу Вашего заказа.</p>
+<p>Номер Вашего заказа: {{_id}}</p>
+<p>Дата Вашего заказа: <span class="date">{{date}}</span></p>
+<p>Ваше имя: <i>{{user.name}}</i></p>
+<p>Ваш телефон: <i>{{user.phone}}</i></p>
+<p>Ваш e-mail: <i>{{user.email}}</i></p>
+<ul class="collection">
+    <li class="collection-item avatar">
+        <img src="{{product.img}}" alt="" class="circle">
+        <span class="title">{{product.title}}</span>
+        <p>Арт.№{{product.vendorCode}}<br>
+            Цена за кг: <span class="price">{{product.price}}</span>
+        </p>
+    </li>
+</ul>
+<p>Тема: <i>{{user.theme}}</i></p>
+<p>Подробности: <i>{{user.information}}</i></p>
+<p class="left-align">На когда: <br> <span class="date">{{user.date}}</span> </p>
+<p></p>
+<h3></h3><a href="/">Вернуться на Главную страницу</a></h3>
