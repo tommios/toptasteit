@@ -1,21 +1,58 @@
-<h1>Спасибо за Ваш заказ!</h1>
-<p>Ожидайте SMS или звонок от оператора по статусу Вашего заказа.</p>
-<p>Номер Вашего заказа: {{_id}}</p>
-<p>Дата Вашего заказа: <span class="date">{{date}}</span></p>
-<p>Ваше имя: <i>{{user.name}}</i></p>
-<p>Ваш телефон: <i>{{user.phone}}</i></p>
-<p>Ваш e-mail: <i>{{user.email}}</i></p>
-<ul class="collection">
-    <li class="collection-item avatar">
-        <img src="{{product.img}}" alt="" class="circle">
-        <span class="title">{{product.title}}</span>
-        <p>Арт.№{{product.vendorCode}}<br>
-            Цена за кг: <span class="price">{{product.price}}</span>
-        </p>
-    </li>
-</ul>
-<p>Тема: <i>{{user.theme}}</i></p>
-<p>Подробности: <i>{{user.information}}</i></p>
-<p class="left-align">На когда: <br> <span class="date">{{user.date}}</span> </p>
+<div class="center-align">
+    <h1>Спасибо за Ваш заказ!</h1>
+    <p>Ожидайте, мы обязательно <b>Вам перезвоним</b> что бы обсудить все детали Вашего заказа.</p>
+
+    <h5>Ваш заказ:</h5>
+
+    {{#if newOrder.product}}
+
+        <table class="order-details-top">
+            <tbody>
+                <tr>
+                    <td>Арт.№ {{newOrder.product.vendorCode}}</td>
+                    <td>{{newOrder.product.title}}</td>
+                    <td>Цена за кг: <span class="price">{{newOrder.product.price}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="{{newOrder.product.img}}" alt="" class="order-details-img">
+    {{/if}}
+</div>
+<table class="order-details">
+    <tbody>
+        <tr>
+            <td>Номер Вашего заказа</td>
+            <td>{{newOrder._id}}</td>
+        </tr>
+        <tr>
+            <td>Дата Вашего заказа</td>
+            <td><span class="date">{{newOrder.date}}</span></td>
+        </tr>
+        <tr>
+            <td>Ваше имя</td>
+            <td><i>{{newOrder.user.name}}</i></td>
+        </tr>
+        <tr>
+            <td>Ваш телефон</td>
+            <td><i>{{newOrder.user.phone}}</i></td>
+        </tr>
+        <tr>
+            <td>Ваш e-mail</td>
+            <td><i>{{newOrder.user.email}}</i></td>
+        </tr>
+        <tr>
+            <td>Тема</td>
+            <td><i>{{newOrder.user.theme}}</i></td>
+        </tr>
+        <tr>
+            <td>Подробности</td>
+            <td><i>{{newOrder.user.information}}</i></td>
+        </tr>
+        <tr>
+            <td>На когда</td>
+            <td><span class="dateWithoutTime">{{newOrder.user.date}}</span></td>
+        </tr>
+    </tbody>
+</table>
 <p></p>
-<h3></h3><a href="/">Вернуться на Главную страницу</a></h3>
+<h3 class="flow-text center-align"><a href="/">Вернуться на Главную страницу</a></h3>

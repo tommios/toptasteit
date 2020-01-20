@@ -11,9 +11,15 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/orderSaccess", (req, res) => {
-  res.render("orderSaccess", {
-    title: "Спасибо за Ваш заказ"
+router.get("/orderSuccess", async (req, res) => {
+  //console.log(req.session.newOrder._id);
+
+  const newOrder = await Order.findById(req.session.newOrder._id);
+  //console.log(newOrder);
+
+  res.render("orderSuccess", {
+    title: "Спасибо за Ваш заказ",
+    newOrder
   });
 });
 
@@ -28,9 +34,9 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/add", async (req, res) => {
-  console.log(req.body);
-  console.log(req.user);
-  console.log(req.session);
+  // console.log(req.body);
+  // console.log(req.user);
+  // console.log(req.session);
 
   const product = await Product.findById(req.body.product);
   const order = new Order({
@@ -44,9 +50,21 @@ router.post("/add", async (req, res) => {
     },
     product
   });
+  //console.log(order);
 
   await order.save();
-  res.redirect("/");
+  req.session.newOrder = order;
+  req.session.save(err => {
+    if (err) {
+      throw err;
+    }
+    res.redirect("/formOrder/orderSuccess");
+  });
+
+  // res.render("orderSuccess", {
+  //   title: "Спасибо за Ваш заказ",
+  //   order
+  // });
 });
 
 module.exports = router;

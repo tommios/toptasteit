@@ -16,6 +16,14 @@ const toDate = date => {
   }).format(new Date(date));
 };
 
+const toDateWithoutTime = date => {
+  return new Intl.DateTimeFormat("ru-RU", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  }).format(new Date(date));
+};
+
 document.querySelectorAll(".price").forEach(node => {
   node.textContent = toCarrency(node.textContent);
 });
@@ -24,47 +32,51 @@ document.querySelectorAll(".date").forEach(node => {
   node.textContent = toDate(node.textContent);
 });
 
-const $card = document.querySelector("#card");
-if ($card) {
-  $card.addEventListener("click", event => {
-    if (event.target.classList.contains("js-remove")) {
-      const id = event.target.dataset.id;
-      const csrf = event.target.dataset.csrf;
+document.querySelectorAll(".dateWithoutTime").forEach(node => {
+  node.textContent = toDateWithoutTime(node.textContent);
+});
 
-      fetch("/card/remove/" + id, {
-        method: "delete",
-        headers: {
-          "X-XSRF-TOKEN": csrf
-        }
-      })
-        .then(res => res.json())
-        .then(card => {
-          if (card.products.length) {
-            const html = card.products
-              .map(c => {
-                return `
-                            <tr>
-                                <td>${c.title}</td>
-                                <td>${c.price}</td>
-                                <td>${c.count}</td>
-                                <td>
-                                    <button class="btn red btn-small js-remove" data-id="${c.id}">Удалить</button>
-                                </td>
-                            </tr>`;
-              })
-              .join("");
+// const $card = document.querySelector("#card");
+// if ($card) {
+//   $card.addEventListener("click", event => {
+//     if (event.target.classList.contains("js-remove")) {
+//       const id = event.target.dataset.id;
+//       const csrf = event.target.dataset.csrf;
 
-            $card.querySelector("tbody").innerHTML = html;
-            console.log(html);
+//       fetch("/card/remove/" + id, {
+//         method: "delete",
+//         headers: {
+//           "X-XSRF-TOKEN": csrf
+//         }
+//       })
+//         .then(res => res.json())
+//         .then(card => {
+//           if (card.products.length) {
+//             const html = card.products
+//               .map(c => {
+//                 return `
+//                             <tr>
+//                                 <td>${c.title}</td>
+//                                 <td>${c.price}</td>
+//                                 <td>${c.count}</td>
+//                                 <td>
+//                                     <button class="btn red btn-small js-remove" data-id="${c.id}">Удалить</button>
+//                                 </td>
+//                             </tr>`;
+//               })
+//               .join("");
 
-            $card.querySelector(".price").textContent = toCarrency(card.price);
-          } else {
-            $card.innerHTML = "<p>Корзина пуста</p>";
-          }
-        });
-    }
-  });
-}
+//             $card.querySelector("tbody").innerHTML = html;
+//             console.log(html);
+
+//             $card.querySelector(".price").textContent = toCarrency(card.price);
+//           } else {
+//             $card.innerHTML = "<p>Корзина пуста</p>";
+//           }
+//         });
+//     }
+//   });
+// }
 
 // Carousel
 document.addEventListener("DOMContentLoaded", function() {
@@ -72,12 +84,12 @@ document.addEventListener("DOMContentLoaded", function() {
   var instances = M.Carousel.init(elems, {
     duration: 300, // Продолжительность перехода в миллисекундах
     dist: -50, // Перспективный зум. Если 0, все элементы имеют одинаковый размер.
-    shift: 0, // Установите интервал центрального элемента.
-    padding: 0, // Установите отступ между нецентральными элементами.
-    numVisible: 5, // Установите количество видимых предметов
-    fullWidth: false, // Сделайте карусель ползунком полной ширины, как во втором примере.
+    shift: 0, // Интервал центрального элемента.
+    padding: 0, // Отступ между нецентральными элементами.
+    numVisible: 5, // Количество видимых элементов
+    fullWidth: false, // Сделайте карусель ползунком полной ширины
     indicators: false, // Установите в true, чтобы показать индикаторы.
-    noWrap: false, // Не оборачивайтесь и не перебирайте предметы.
+    noWrap: false, // Не оборачивать и не перебирать элементы
     onCycleTo: null, // Обратный вызов, когда новый слайд циклически повторяется.
     height: 640
   });

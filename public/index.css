@@ -46,7 +46,7 @@ nav,
 }
 
 .card .card-title {
-  font-size: calc(1em + 0.1vw);
+  font-size: calc(0.8em + 0.1vw);
 }
 
 .card .flow-text {
@@ -191,7 +191,40 @@ th.sorted[data-order="1"]::after {
 /* End Style for foods-calorie */
 /* --------------------------- */
 
-ul.collection .collection-item {
+/* ul.collection .collection-item {
   background-color: #fce0b7;
   font-size: large;
+} */
+
+.order-details table {
+  border-collapse: collapse;
+}
+
+.order-details tbody tr:nth-child(even) {
+  background: rgb(247, 211, 168);
+}
+
+.order-details td {
+  width: 50%;
+  padding: 5px;
+  padding-left: 25px;
+  text-align: left;
+  border: 1px solid #846868;
+}
+
+.order-details-top table {
+  border-collapse: collapse;
+}
+
+.order-details-top td {
+  width: 33%;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #846868;
+}
+
+.order-details-img {
+  max-height: 500px;
+  width: auto;
+  margin-top: 20px;
 }
