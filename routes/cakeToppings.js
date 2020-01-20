@@ -36,11 +36,11 @@ router.get("/:id/edit", auth, async (req, res) => {
     const cakeToppings = await CakeToppings.findById(req.params.id);
 
     if (!isOwner(cakeToppings, req)) {
-      return res.redirect("/CakeToppings");
+      return res.redirect("/cakeToppings");
     }
 
-    res.render("CakeToppings-edit", {
-      title: `Редактировать ${CakeToppings.title}`,
+    res.render("cakeToppings-edit", {
+      title: `Редактировать ${cakeToppings.title}`,
       cakeToppings
     });
   } catch (err) {

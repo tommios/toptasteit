@@ -21,34 +21,29 @@
 
                     <div class="card-action">
                         <div class="row">
-
-                            <div class="left">
-                                <a href="/products/{{id}}" target="_blank"
-                                    class="btn-floating btn-small tooltipped waves-effect waves-light light-blue lighten-1"
-                                    data-position="top" data-tooltip="Смотреть подробное описание"><i
-                                        class="material-icons">info_outline</i></a>
-                            </div>
-
                             <div class="right">
                                 {{#if @root.isAuth}}
-
                                     {{#ifeq userId._id @root.userId}}
-
                                         <a href="/products/{{id}}/edit?allow=true"
                                             class="btn-floating btn-small waves-effect waves-light red"><i
                                                 class="material-icons">edit</i></a>
                                     {{/ifeq}}
                                 {{/if}}
                             </div>
-
                         </div>
                         <hr>
-                        <div class="center">
+                        <div class="left">
+                            <a href="/products/{{id}}" target="_blank"
+                                class="btn-floating btn-small tooltipped waves-effect waves-light light-blue lighten-1"
+                                data-position="top" data-tooltip="Смотреть подробное описание"><i
+                                    class="material-icons">info_outline</i></a>
+                        </div>
+                        <div class="right">
                             <form action="/formOrder" method="post">
                                 <input type="hidden" name="id" value="{{id}}">
                                 <input type="hidden" name="_csrf" value="{{@root.csrf}}">
                                 <button type="submit"
-                                    class="btn btn-primary btn-medium green accent-4">Заказать</button>
+                                    class="btn btn-primary btn-medium amber accent-4 blue-text text-darken-2">Заказать</button>
                             </form>
                         </div>
 
