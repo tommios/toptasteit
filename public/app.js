@@ -36,48 +36,6 @@ document.querySelectorAll(".dateWithoutTime").forEach(node => {
   node.textContent = toDateWithoutTime(node.textContent);
 });
 
-// const $card = document.querySelector("#card");
-// if ($card) {
-//   $card.addEventListener("click", event => {
-//     if (event.target.classList.contains("js-remove")) {
-//       const id = event.target.dataset.id;
-//       const csrf = event.target.dataset.csrf;
-
-//       fetch("/card/remove/" + id, {
-//         method: "delete",
-//         headers: {
-//           "X-XSRF-TOKEN": csrf
-//         }
-//       })
-//         .then(res => res.json())
-//         .then(card => {
-//           if (card.products.length) {
-//             const html = card.products
-//               .map(c => {
-//                 return `
-//                             <tr>
-//                                 <td>${c.title}</td>
-//                                 <td>${c.price}</td>
-//                                 <td>${c.count}</td>
-//                                 <td>
-//                                     <button class="btn red btn-small js-remove" data-id="${c.id}">Удалить</button>
-//                                 </td>
-//                             </tr>`;
-//               })
-//               .join("");
-
-//             $card.querySelector("tbody").innerHTML = html;
-//             console.log(html);
-
-//             $card.querySelector(".price").textContent = toCarrency(card.price);
-//           } else {
-//             $card.innerHTML = "<p>Корзина пуста</p>";
-//           }
-//         });
-//     }
-//   });
-// }
-
 // Carousel
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".carousel");

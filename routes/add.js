@@ -40,9 +40,6 @@ router.post("/", auth, productValidators, async (req, res) => {
     });
   }
 
-  //console.log(req.body);
-  // console.log(req.files);
-  // console.log(req.files.img[0].location);
   const products = await Product.find();
 
   const product = new Product({

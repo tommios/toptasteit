@@ -113,10 +113,7 @@ router.post("/register", registerValidators, async (req, res) => {
     const user = new User({
       email,
       name,
-      password: hashPassword,
-      cart: {
-        items: []
-      }
+      password: hashPassword
     });
 
     await user.save();

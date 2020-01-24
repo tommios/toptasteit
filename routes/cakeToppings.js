@@ -26,8 +26,6 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id/edit", auth, async (req, res) => {
-  //console.log(req.query.allow);
-
   if (!req.query.allow) {
     return res.redirect("/cakeToppings");
   }
@@ -52,7 +50,6 @@ router.post("/editCakeTopic", auth, async (req, res) => {
   const { id } = req.body;
 
   const errors = validationResult(req);
-  //console.log(errors);
 
   if (!errors.isEmpty()) {
     return res.status(422).redirect(`${id}/edit?allow=true`);
