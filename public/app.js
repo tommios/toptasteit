@@ -25,7 +25,7 @@ const toDateWithoutTime = date => {
 };
 
 document.querySelectorAll(".price").forEach(node => {
-  node.textContent = toCarrency(node.textContent);
+  node.textContent = toCarrency(node.textContent) + "/кг";
 });
 
 document.querySelectorAll(".date").forEach(node => {
@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
     dist: -50, // Перспективный зум. Если 0, все элементы имеют одинаковый размер.
     shift: 0, // Интервал центрального элемента.
     padding: 0, // Отступ между нецентральными элементами.
-    numVisible: 5, // Количество видимых элементов
+    numVisible: 3, // Количество видимых элементов
     fullWidth: false, // Сделайте карусель ползунком полной ширины
-    indicators: false, // Установите в true, чтобы показать индикаторы.
+    indicators: true, // Установите в true, чтобы показать индикаторы.
     noWrap: false, // Не оборачивать и не перебирать элементы
     onCycleTo: null, // Обратный вызов, когда новый слайд циклически повторяется.
     height: 640
@@ -80,4 +80,17 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 /***************
      End Date Picker
+****************/
+
+/***************
+     Parallax Container
+****************/
+
+document.addEventListener("DOMContentLoaded", function() {
+  var elems = document.querySelectorAll(".parallax");
+  var instances = M.Parallax.init(elems, {});
+});
+
+/***************
+     End Parallax Container
 ****************/

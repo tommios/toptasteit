@@ -1,38 +1,82 @@
-<h1 class="center-align">Начинки для тортов</h1>
+<div class="container">
+    <h1 class="center-align">Начинки для тортов</h1>
 
-{{#if cakeToppings.length}}
+    {{#if cakeToppings.length}}
 
-    {{#each cakeToppings}}
-        <div class="row">
-            <div class="col s12 m4 l4 xl4">
-
-                <div class="responsive-image">
-                    <img src="{{ image }}" alt="{{ title }}" width="auto" height="240">
+        {{#each cakeToppings}}
+            <div class="row">
+                <div class="col s12 m5 l5 xl5 cakeTopp-image">
+                    <div class="cakeTopp-image">
+                        <img src="{{ image }}" alt="{{ title }}">
+                    </div>
                 </div>
+                <div class="col s12 m7 l7 xl7">
+                    <div class="flow-text">
+                        <h3 class="center-align">{{ title }}</h3>
+                    </div>
+                    <div class="flow-text">
+                        <span class="center-align">{{ text }}</span>
+                    </div>
+
+                    <div class="right">
+                        <hr>
+                        {{#if @root.isAuth}}
+                            {{#ifeq userId._id @root.userId}}
+                                <a href="/cakeToppings/{{id}}/edit?allow=true"
+                                    class="btn waves-effect waves-light red">Редактировать</a>
+                            {{/ifeq}}
+                        {{/if}}
+                    </div>
+
+                    <div class="soc-like center">
+                        <br>
+                        <div data-count-clicks="true" data-icon-style="1" data-text-size="16" data-pid="1871052"
+                            data-icon-size="16" data-background-color="#fce0b6" data-icon-color="74452e"
+                            data-text-color="74452e" data-like-layout="tic" data-dislike-layout="tic"
+                            class="uptolike-rating">
+                        </div>
+                    </div>
+
+                    <div class="soc-share center">
+                        <br>
+                        <p>Расскажите друзьям в соц. сетях:</p>
+
+                        <div data-mobile-view="false" data-share-size="40" data-like-text-enable="false"
+                            data-background-alpha="0.0" data-pid="1871054" data-mode="share"
+                            data-background-color="#ffffff" data-hover-effect="scale" data-share-shape="round-rectangle"
+                            data-share-counter-size="12" data-icon-color="#ffffff"
+                            data-mobile-sn-ids="fb.vk.tw.ok.wh.tm.vb.ps." data-text-color="#000000"
+                            data-buttons-color="#FFFFFF" data-counter-background-color="#ffffff"
+                            data-share-counter-type="disable" data-orientation="horizontal"
+                            data-following-enable="false" data-sn-ids="fb.tw.vk.ok.wh.tm.vb.ps."
+                            data-preview-mobile="false" data-selection-enable="true" data-exclude-show-more="true"
+                            data-share-style="1" data-counter-background-alpha="1.0" data-top-button="false"
+                            class="uptolike-buttons">
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-            <div class="col s12 m8 l8 xl8">
-                <div class="flow-text">
-                    <h3 class="center-align">{{ title }}</h3>
-                </div>
-                <div class="flow-text">
-                    <span class="center-align">{{ text }}</span>
-                </div>
+            <hr>
+        {{/each}}
 
-                <div class="right">
-                    <hr>
-                    {{#if @root.isAuth}}
-                        {{#ifeq userId._id @root.userId}}
-                            <a href="/cakeToppings/{{id}}/edit?allow=true"
-                                class="btn waves-effect waves-light red">Редактировать</a>
-                        {{/ifeq}}
-                    {{/if}}
-                </div>
-            </div>
-        </div>
-        <hr>
-    {{/each}}
+    {{else}}
+        <p>Описаний начинок для тортов пока нет</p>
+    {{/if}}
+    <h3 class="center-align">
+        <a href="/products">Перейти в Каталог<i class="material-icons">send</i></a>
+    </h3>
+</div>
 
-{{else}}
-    <p>Описаний начинок для тортов пока нет</p>
-{{/if}}
-<h3 class="center-align"><a href="/products">Перейти в Каталог<i class="material-icons">send</i></a></h3>
+<script type="text/javascript">(function (w, doc) {
+        if (!w.__utlWdgt) {
+            w.__utlWdgt = true;
+            var d = doc, s = d.createElement('script'), g = 'getElementsByTagName';
+            s.type = 'text/javascript'; s.charset = 'UTF-8'; s.async = true;
+            s.src = ('https:' == w.location.protocol ? 'https' : 'http') + '://w.uptolike.com/widgets/v1/uptolike.js';
+            var h = d[g]('body')[0];
+            h.appendChild(s);
+        }
+    })(window, document);
+</script>

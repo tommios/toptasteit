@@ -2,9 +2,20 @@ body {
   background-color: #fdecd3;
   font-family: cursive, fantasy;
 
-  display: flex;
+  /* display: flex;
   min-height: 100vh;
-  flex-direction: column;
+  flex-direction: column; */
+}
+
+.main--name {
+  margin-top: 15%;
+  margin-left: 25%;
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+.p1 {
+  font-size: 0.8rem;
 }
 
 main {
@@ -38,7 +49,10 @@ nav {
 nav,
 .nav-content,
 .page-footer {
-  background-color: #d88406;
+  /* background-color: #d88406; */
+
+  background-color: #74452e;
+  width: 100%;
 }
 
 .nav-wrapper {
@@ -47,6 +61,10 @@ nav,
 
 .card .card-title {
   font-size: calc(0.8em + 0.1vw);
+}
+
+.card .card-content {
+  padding: 10px;
 }
 
 .card .flow-text {
@@ -75,6 +93,10 @@ a.brand-logo img {
   margin: 5px auto 5px auto;
 }
 
+.cakeTopp-image img {
+  width: 100%;
+}
+
 .product {
   width: 100%;
   display: flex;
@@ -84,12 +106,14 @@ a.brand-logo img {
 }
 
 .product .product-img {
-  margin: 15px;
+  margin-left: 25px;
+  padding: 15px;
   object-fit: scale-down;
 }
 
 .product-img img {
-  width: calc(100% / 1.01);
+  height: 70%;
+  width: auto;
 }
 
 .product .content {
@@ -151,7 +175,7 @@ a.brand-logo img {
   background: #d88211;
   cursor: pointer;
 
-  font-size: 1.3vw;
+  font-size: calc(0.4vw + 0.6vh);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
