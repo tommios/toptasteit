@@ -134,14 +134,14 @@ a.brand-logo img {
 }
 
 .product .product-img {
-  margin-left: 25px;
+  margin: 15px auto;
   padding: 15px;
   object-fit: scale-down;
 }
 
 .product-img img {
-  height: 70%;
-  width: auto;
+  /* height: 70%; */
+  width: 100%;
 }
 
 .product .content {
