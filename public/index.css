@@ -118,7 +118,7 @@ a.brand-logo img {
   position: relative;
   top: 0;
   bottom: 0;
-  margin: 5px auto 5px auto;
+  margin: 10px; /*5px auto 5px auto; */
 }
 
 .cakeTopp-image img {
