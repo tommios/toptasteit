@@ -14,8 +14,19 @@
                             <img src="{{ img }}" alt="{{ title }}">
                         </div>
                         <div class="card-content flow-text">
-                            <p class="left-align p1">Арт.№ {{ vendorCode }}</p>
-                            <p class="center-align">{{ title }}</p>
+
+                            <div class="vendor-like">
+                                <div class="left-align p1 vendor">Арт.№ {{ vendorCode }}</div>
+
+                                <div data-count-clicks="true" data-icon-style="0" data-text-size="12" data-pid="1871052"
+                                    data-icon-size="12" data-background-color="#fffde7" data-icon-color="74452e"
+                                    data-text-color="74452e" data-like-layout="ic" data-dislike-layout="ic"
+                                    class="uptolike-rating vendor-uptolike">
+                                </div>
+
+                            </div>
+                            <br>
+                            <p class="title center-align">{{ title }}</p>
                             <p class="price center-align">{{ price }}</p>
                             <hr>
                             <div class="left-align">
@@ -49,3 +60,15 @@
         <p>Товаров пока нет</p>
     {{/if}}
 </div>
+
+<script type="text/javascript">(function (w, doc) {
+        if (!w.__utlWdgt) {
+            w.__utlWdgt = true;
+            var d = doc, s = d.createElement('script'), g = 'getElementsByTagName';
+            s.type = 'text/javascript'; s.charset = 'UTF-8'; s.async = true;
+            s.src = ('https:' == w.location.protocol ? 'https' : 'http') + '://w.uptolike.com/widgets/v1/uptolike.js';
+            var h = d[g]('body')[0];
+            h.appendChild(s);
+        }
+    })(window, document);
+</script>

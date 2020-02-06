@@ -2,9 +2,19 @@ body {
   background-color: #fdecd3;
   font-family: cursive, fantasy;
 
-  /* display: flex;
+  display: flex;
   min-height: 100vh;
-  flex-direction: column; */
+  flex-direction: column;
+}
+
+#logotip {
+  color: #74452e;
+  font-size: 5em;
+  text-shadow: 0px 0px 0 #74452e, 1px 1px 0 #865035, 2px 2px 0 #94583b,
+    3px 3px 0 #a66241, 4px 4px 0 #b16946, 5px 5px 0 #d27c52, 6px 6px 0 #e4885b,
+    7px 7px 0 #ed8d5f, 8px 8px 0 #f99565, 9px 9px 0 #fba47a,
+    10px 10px 20px rgba(0, 0, 0, 1), 10px 10px 1px rgba(0, 0, 0, 0.5),
+    0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .main--name {
@@ -15,7 +25,7 @@ body {
 }
 
 .p1 {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 main {
@@ -31,17 +41,6 @@ main {
   font-size: 1.3rem;
 }
 
-.carousel {
-  height: 420px;
-  margin-bottom: 100px;
-}
-
-.carousel .carousel-item > img {
-  width: 230%;
-  /* margin-bottom: 50%; */
-  margin-left: -75%;
-}
-
 nav {
   box-shadow: none;
 }
@@ -49,14 +48,34 @@ nav {
 nav,
 .nav-content,
 .page-footer {
-  /* background-color: #d88406; */
-
   background-color: #74452e;
   width: 100%;
 }
 
+ul.footer-menu li > a {
+  color: #ffe0b2;
+}
+
+ul.footer-menu li > a:hover {
+  color: #f8c16e;
+}
+
 .nav-wrapper {
   padding: 0 2rem;
+}
+
+.sidenav {
+  background-color: #fdf3e4;
+}
+
+.sidenav li > a {
+  color: #74452e;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background-color: #ffdaa2;
+  font-size: large;
 }
 
 .card .card-title {
@@ -69,6 +88,15 @@ nav,
 
 .card .flow-text {
   font-size: calc(1rem + 0.1vw);
+}
+
+.vendor,
+.uptolike-rating {
+  display: inline-block;
+}
+
+.vendor-uptolike {
+  float: right;
 }
 
 .price {
@@ -214,6 +242,17 @@ th.sorted[data-order="1"]::after {
 /* --------------------------- */
 /* End Style for foods-calorie */
 /* --------------------------- */
+
+/* Payment and Delivery */
+.collection .collection-item {
+  background-color: #faedda;
+}
+
+.collection a.collection-item {
+  color: #039be5;
+}
+
+/* End Payment and Delivery */
 
 .order-details table {
   border-collapse: collapse;

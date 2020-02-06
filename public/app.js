@@ -36,24 +36,27 @@ document.querySelectorAll(".dateWithoutTime").forEach(node => {
   node.textContent = toDateWithoutTime(node.textContent);
 });
 
-// Carousel
+/***************
+    Carousel
+****************/
+
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".carousel");
-  var instances = M.Carousel.init(elems, {
-    duration: 300, // Продолжительность перехода в миллисекундах
-    dist: -50, // Перспективный зум. Если 0, все элементы имеют одинаковый размер.
-    shift: 0, // Интервал центрального элемента.
-    padding: 0, // Отступ между нецентральными элементами.
-    numVisible: 3, // Количество видимых элементов
-    fullWidth: false, // Сделайте карусель ползунком полной ширины
-    indicators: true, // Установите в true, чтобы показать индикаторы.
-    noWrap: false, // Не оборачивать и не перебирать элементы
-    onCycleTo: null, // Обратный вызов, когда новый слайд циклически повторяется.
-    height: 640
+  var instance = M.Carousel.init(elems, {
+    fullWidth: true,
+    indicators: true
   });
 });
 
-M.Tabs.init(document.querySelectorAll(".tabs"));
+/***************
+    End Carousel
+****************/
+
+/*      Tabs       */
+
+M.Tabs.init(document.querySelectorAll(".tabs"), { swipeable: false });
+
+/*    End Tabs     */
 
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".sidenav");

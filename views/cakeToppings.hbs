@@ -41,7 +41,7 @@
                         <br>
                         <p>Расскажите друзьям в соц. сетях:</p>
 
-                        <div data-mobile-view="false" data-share-size="40" data-like-text-enable="false"
+                        <div data-mobile-view="false" data-share-size="30" data-like-text-enable="false"
                             data-background-alpha="0.0" data-pid="1871054" data-mode="share"
                             data-background-color="#ffffff" data-hover-effect="scale" data-share-shape="round-rectangle"
                             data-share-counter-size="12" data-icon-color="#ffffff"
@@ -64,16 +64,23 @@
     {{else}}
         <p>Описаний начинок для тортов пока нет</p>
     {{/if}}
-    <h3 class="center-align">
-        <a href="/products">Перейти в Каталог<i class="material-icons">send</i></a>
-    </h3>
+    <div class="collection">
+        <a href="/products" class="collection-item">Перейти в Каталог</a>
+        <a href="/formOrder" class="collection-item">Перейти в форму для заказа</a>
+    </div>
 </div>
 
-<script type="text/javascript">(function (w, doc) {
+<script type="text/javascript">
+    (function (w, doc) {
         if (!w.__utlWdgt) {
             w.__utlWdgt = true;
-            var d = doc, s = d.createElement('script'), g = 'getElementsByTagName';
-            s.type = 'text/javascript'; s.charset = 'UTF-8'; s.async = true;
+            var d = doc;
+            var s = d.createElement('script');
+            var g = 'getElementsByTagName';
+
+            s.type = 'text/javascript';
+            s.charset = 'UTF-8';
+            s.async = true;
             s.src = ('https:' == w.location.protocol ? 'https' : 'http') + '://w.uptolike.com/widgets/v1/uptolike.js';
             var h = d[g]('body')[0];
             h.appendChild(s);

@@ -1,64 +1,67 @@
-<h2>Редактировать</h2>
-<h3>{{product.title}}</h3>
+<div class="container">
+    <h4 class="center">Редактировать</h4>
 
-<div class="row">
-    <div class="col s12 m12 l10 xl10">
-        <form action="/products/edit" method="POST" class="product-form" enctype="multipart/form-data">
-            <div class="input-field">
-                <input id="title" name="title" type="text" class="validate" required value="{{product.title}}">
-                <label for="title">Название</label>
-                <span class="helper-text" data-error="Введите новое название"></span>
-            </div>
-
-            <div class="input-field">
-                <textarea id="description" class="materialize-textarea" name="description"
-                    placeholder="Введите краткое описание">{{product.description}}</textarea>
-                <label for="description">Краткое описание</label>
-            </div>
-
-            <div class="input-field">
-                <input id="ingredients" name="ingredients" type="text" value="{{product.ingredients}}">
-                <label for="ingredients">Ингредиенты</label>
-                <span class="helper-text" data-error="Введите основные ингредиенты через пробел"></span>
-            </div>
-
-            <div class="input-field">
-                <input id="calorie" name="calorie" type="number" value="{{product.calorie}}">
-                <label for="calorie">Калории</label>
-                <span class="helper-text" data-error="Введите калорийность в 100гр продукта"></span>
-            </div>
-
-            <div class="input-field">
-                <input id="price" name="price" type="number" class="validate" required min="1"
-                    value="{{product.price}}">
-                <label for="price">Цена за килограмм (ориентировочно)</label>
-                <span class="helper-text" data-error="Введите новую цену"></span>
-            </div>
-
-            <div class="input-field file-field">
-                <div class="btn">
-                    <span>Новое фото</span>
-                    <input type="file" name="img">
+    <div class="row">
+        <div class="col s12 m12 l10 xl10">
+            <form action="/products/edit" method="POST" class="product-form" enctype="multipart/form-data">
+                <div class="input-field">
+                    <input id="title" name="title" type="text" class="validate" required value="{{product.title}}">
+                    <label for="title">Название</label>
+                    <span class="helper-text" data-error="Введите новое название"></span>
                 </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
+
+                <div class="input-field">
+                    <textarea id="description" class="materialize-textarea" name="description"
+                        placeholder="Введите краткое описание">{{product.description}}</textarea>
+                    <label for="description">Краткое описание</label>
                 </div>
-            </div>
 
-            <input type="hidden" name="id" value="{{product.id}}">
-            <input type="hidden" name="_csrf" value="{{csrf}}">
-            <button type="submit" class="btn blue">Изменить</button>
+                <div class="input-field">
+                    <input id="ingredients" name="ingredients" type="text" value="{{product.ingredients}}">
+                    <label for="ingredients">Ингредиенты</label>
+                    <span class="helper-text" data-error="Введите основные ингредиенты через пробел"></span>
+                </div>
 
-        </form>
+                <div class="input-field">
+                    <input id="calorie" name="calorie" type="number" value="{{product.calorie}}">
+                    <label for="calorie">Калории</label>
+                    <span class="helper-text" data-error="Введите калорийность в 100гр продукта"></span>
+                </div>
+
+                <div class="input-field">
+                    <input id="price" name="price" type="number" class="validate" required min="1"
+                        value="{{product.price}}">
+                    <label for="price">Цена за килограмм (ориентировочно)</label>
+                    <span class="helper-text" data-error="Введите новую цену"></span>
+                </div>
+
+                <div class="input-field file-field">
+                    <div class="btn blue">
+                        <span>Новое фото</span>
+                        <input type="file" name="img">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+
+                <input type="hidden" name="id" value="{{product.id}}">
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+                <div class="center">
+                    <button type="submit" class="btn btn-primary">Изменить</button>
+                </div>
+
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col s12 m12 l10 xl10">
-        <form action="/products/remove" method="post">
-            <input type="hidden" name="id" value="{{product.id}}">
-            <input type="hidden" name="_csrf" value="{{csrf}}">
-            <button class="btn red">Удалить</button>
-        </form>
+    <div class="row">
+        <div class="col s12 m12 l10 xl10 center">
+            <form action="/products/remove" method="post">
+                <input type="hidden" name="id" value="{{product.id}}">
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+                <button class="btn red">Удалить</button>
+            </form>
+        </div>
     </div>
 </div>
