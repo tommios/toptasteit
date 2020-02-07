@@ -3,7 +3,7 @@
 
     <div class="row">
 
-        <div class="col s12 m6">
+        <div class="col s12 m4">
             {{#if user.avatarUrl}}
                 <img class="avatar circle" src="{{user.avatarUrl}}" alt="avatar-{{user.name}}">
             {{else}}
@@ -12,9 +12,7 @@
             {{/if}}
         </div>
 
-        <div class="col s12 m6">
-            <p class="center-align topic">Настройки профиля:</p>
-            <p class="center-align">Здесь можно изменить имя и загрузить новое фото аватарки.</p>
+        <div class="col s12 m6 offset-m2">
             <form action="/profile" method="POST" enctype="multipart/form-data">
                 <p>Ваш email: <strong><big>{{user.email}}</big></strong></p>
 
@@ -41,6 +39,28 @@
         </div>
 
     </div>
+
+    {{#if isAuth}}
+
+        <div class="collection">
+
+            <h5><a href="/add" class="collection-item adding">Добавить новый товар в каталог</a></h5>
+
+            <h5><a href="/addCakeToppings" class="collection-item adding">Добавить новое описание начинки для
+                    торта</a></h5>
+
+        </div>
+
+    {{else}}
+
+        {{#if isLogin}}
+            <li class="active"><a href="/auth/login#login">Войти</a></li>
+        {{else}}
+            <li><a href="/auth/login#login">Войти</a></li>
+        {{/if}}
+
+    {{/if}}
+    <br>
     <div class="row">
         <div class="col s12">
             <p class="center-align topic">Добавление и удаление товаров из каталога:</p>
@@ -55,21 +75,6 @@
             <p>Так же в меню редактирования можно удалить выбранный товар из каталога нажав на кнопку <button
                     class="btn red">Удалить</button></p>
 
-            {{#if isAuth}}
-                <p>Для того что бы добавить товар в каталог нажмите на кнопку ниже: </p>
-                <p class="center-align"><a href="/add" class="btn">Добавить новый товар в каталог</a></p>
-                <p>Для того что бы добавить описание начинки для торта на кнопку ниже: </p>
-                <p class="center-align"><a href="/addCakeToppings" class="btn">Добавить новое описание начинки</a></p>
-
-            {{else}}
-
-                {{#if isLogin}}
-                    <li class="active"><a href="/auth/login#login">Войти</a></li>
-                {{else}}
-                    <li><a href="/auth/login#login">Войти</a></li>
-                {{/if}}
-
-            {{/if}}
         </div>
     </div>
 </div>

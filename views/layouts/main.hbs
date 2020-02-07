@@ -2,6 +2,50 @@
 
 <body>
 
+    <script>
+        { { !--Facebook --} }
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '228002318203066',
+                cookie: true,
+                xfbml: true,
+                version: 'v6.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        { { !--End script Facebook-- } }
+
+        { { !--Uptolike --} }
+        (function (w, doc) {
+            if (!w.__utlWdgt) {
+                w.__utlWdgt = true;
+                var d = doc;
+                var s = d.createElement('script');
+                var g = 'getElementsByTagName';
+
+                s.type = 'text/javascript';
+                s.charset = 'UTF-8';
+                s.async = true;
+                s.src = ('https:' == w.location.protocol ? 'https' : 'http') + '://w.uptolike.com/widgets/v1/uptolike.js';
+                var h = d[g]('body')[0];
+                h.appendChild(s);
+            }
+        })(window, document);
+
+        { { !--End script Uptolike-- } }
+    </script>
+
     {{> navbar }}
 
     <main>

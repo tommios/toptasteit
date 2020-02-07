@@ -1,58 +1,60 @@
-<div class="center-align">
-    <h1>Спасибо за Ваш заказ!</h1>
-    <p>Ожидайте, мы обязательно <b>Вам перезвоним</b> что бы обсудить все детали Вашего заказа.</p>
+<div class="container">
+    <div class="center">
+        <h1>Спасибо за Ваш заказ!</h1>
+        <p>Ожидайте, мы обязательно <b>Вам перезвоним</b> что бы обсудить все детали Вашего заказа.</p>
 
-    <h5>Ваш заказ:</h5>
+        <h5>Ваш заказ:</h5>
 
-    {{#if newOrder.product}}
+        {{#if newOrder.product}}
 
-        <table class="order-details-top">
-            <tbody>
-                <tr>
-                    <td>Арт.№ {{newOrder.product.vendorCode}}</td>
-                    <td>{{newOrder.product.title}}</td>
-                    <td>Цена за кг: <span class="price">{{newOrder.product.price}}</span></td>
-                </tr>
-            </tbody>
-        </table>
-        <img src="{{newOrder.product.img}}" alt="" class="order-details-img">
-    {{/if}}
+            <table class="order-details-top">
+                <tbody>
+                    <tr>
+                        <td>Арт.№ {{newOrder.product.vendorCode}}</td>
+                        <td>{{newOrder.product.title}}</td>
+                        <td>Цена за кг: <span class="price">{{newOrder.product.price}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="{{newOrder.product.img}}" alt="" class="order-details-img">
+        {{/if}}
+    </div>
+    <table class="order-details">
+        <tbody>
+            <tr>
+                <td>Номер Вашего заказа</td>
+                <td>{{newOrder._id}}</td>
+            </tr>
+            <tr>
+                <td>Дата Вашего заказа</td>
+                <td><span class="date">{{newOrder.date}}</span></td>
+            </tr>
+            <tr>
+                <td>Ваше имя</td>
+                <td><i>{{newOrder.user.name}}</i></td>
+            </tr>
+            <tr>
+                <td>Ваш телефон</td>
+                <td><i>{{newOrder.user.phone}}</i></td>
+            </tr>
+            <tr>
+                <td>Ваш e-mail</td>
+                <td><i>{{newOrder.user.email}}</i></td>
+            </tr>
+            <tr>
+                <td>Тема</td>
+                <td><i>{{newOrder.user.theme}}</i></td>
+            </tr>
+            <tr>
+                <td>Подробности</td>
+                <td><i>{{newOrder.user.information}}</i></td>
+            </tr>
+            <tr>
+                <td>На когда</td>
+                <td><span class="dateWithoutTime">{{newOrder.user.date}}</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p></p>
+    <h3 class="flow-text center-align"><a href="/">Вернуться на Главную страницу</a></h3>
 </div>
-<table class="order-details">
-    <tbody>
-        <tr>
-            <td>Номер Вашего заказа</td>
-            <td>{{newOrder._id}}</td>
-        </tr>
-        <tr>
-            <td>Дата Вашего заказа</td>
-            <td><span class="date">{{newOrder.date}}</span></td>
-        </tr>
-        <tr>
-            <td>Ваше имя</td>
-            <td><i>{{newOrder.user.name}}</i></td>
-        </tr>
-        <tr>
-            <td>Ваш телефон</td>
-            <td><i>{{newOrder.user.phone}}</i></td>
-        </tr>
-        <tr>
-            <td>Ваш e-mail</td>
-            <td><i>{{newOrder.user.email}}</i></td>
-        </tr>
-        <tr>
-            <td>Тема</td>
-            <td><i>{{newOrder.user.theme}}</i></td>
-        </tr>
-        <tr>
-            <td>Подробности</td>
-            <td><i>{{newOrder.user.information}}</i></td>
-        </tr>
-        <tr>
-            <td>На когда</td>
-            <td><span class="dateWithoutTime">{{newOrder.user.date}}</span></td>
-        </tr>
-    </tbody>
-</table>
-<p></p>
-<h3 class="flow-text center-align"><a href="/">Вернуться на Главную страницу</a></h3>
