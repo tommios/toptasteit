@@ -280,6 +280,7 @@ h4,
 h5,
 h6 {
   font-family: "PT Serif Caption", serif;
+  color: #74452e;
 }
 
 #logotip {
@@ -365,14 +366,14 @@ ul.footer-menu li > a:hover {
   font-size: calc(1rem + 0.1vw);
 }
 
-.vendor,
+/* .vendor,
 .uptolike-rating {
   display: inline-block;
 }
 
 .vendor-uptolike {
   float: right;
-}
+} */
 
 .price {
   font-size: calc(1em + 0.4vw);
@@ -402,29 +403,28 @@ a.brand-logo img {
   width: 100%;
 }
 
-.product {
+/* .product {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-}
+} */
 
-.product .product-img {
+/* .product .product-img {
   margin: 5px auto;
   padding: 25px;
   object-fit: scale-down;
-}
+} */
 
 .product-img img {
-  /* height: 70%; */
   width: 100%;
 }
 
-.product .content {
+/* .product .content {
   padding: auto 15px;
   flex: 1 1;
-}
+} */
 
 .product .price.big {
   font-size: 2.5rem;
